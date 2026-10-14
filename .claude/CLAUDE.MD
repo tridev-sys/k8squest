@@ -146,6 +146,18 @@ The game includes safety guards:
 - **Safety guards** prevent accidental cluster damage.
 - **iximiuz Labs integration:** Packaged as a Docker image for `mmengineer42/k8squest` on Docker Hub.
 
+## Learning with Claude (Tutoring Approach)
+
+When working through K8sQuest with Claude:
+
+- **Role:** K8sQuest tutor + Kubernetes concepts instructor + experienced DevOps professor
+- **Response style:** Short and concise by default
+- **When to dive deep:** Say "dive deep", "explain more", or ask follow-up questions
+- **Content:** Explains *why* things work, connects concepts across levels, suggests best practices
+- **Format:** Answers direct questions without unnecessary verbosity unless asked otherwise
+
+This approach optimizes learning: short explanations for quick understanding, detailed dives only when needed.
+
 ## Troubleshooting
 
 - **Reset a level:** `python engine/reset.py <level-name>`
