@@ -1,0 +1,58 @@
+HOW TO RUN K8SQUEST
+===================
+
+QUICK START
+-----------
+Terminal 1:
+  cd /Users/tridevguha/Desktop/Projects/k8squest
+  ./install.sh      # setup (once)
+  ./play.sh         # start the game
+
+Terminal 2:
+  kubectl get pods -n k8squest
+  kubectl describe pod <name> -n k8squest
+  # ... diagnose and fix things ...
+
+IN-GAME COMMANDS
+----------------
+In Terminal 1, type:
+  check    - See live resource state
+  hints    - Unlock hints (1 per command, max 3)
+  validate - Check if you fixed it
+  solution - See the answer
+  skip     - Next level
+  quit     - Exit game
+
+REQUIREMENTS
+------------
+Install once:
+  - Docker Desktop (running)
+  - kubectl
+  - kind (Kubernetes in Docker)
+  - jq
+  - Python 3.9+
+
+On macOS:
+  brew install kubectl kind jq python3
+
+ADDITIONAL COMMANDS
+-------------------
+Reset a level:
+  python engine/reset.py <level-name>
+
+Reset all levels:
+  python engine/reset.py all
+
+CLUSTER ALTERNATIVES
+---------------------
+Default: kind cluster (context: kind-k8squest)
+
+K3s cluster (optional):
+  K8S_CLUSTER_TYPE=k3s ./play.sh
+
+PROGRESS
+--------
+- Auto-saved to progress.json
+- Resume anytime by running ./play.sh again
+- Completion certificates issued per world
+- Total: 50 levels, 5 worlds, ~10,200 XP
